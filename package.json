@@ -1,0 +1,20 @@
+{
+  "name": "uttest",
+  "version": "1.0.0",
+  "description": "Test project for UT",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel serve ./src/index.html",
+    "build": "parcel build ./src/index.html"
+  },
+  "author": "meichtor",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^9.8.6",
+    "parcel-bundler": "^1.12.4",
+    "postcss-modules": "^3.2.2",
+    "posthtml-inline-svg": "^0.2.0",
+    "posthtml-modules": "^0.6.4",
+    "sass": "^1.26.9"
+  }
+}

@@ -1,0 +1,45 @@
+.promo {
+    position: absolute;
+    top: 0;
+    z-index: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+    min-height: 500px;
+    padding: 100px 0;
+
+    background-image: url('../images/mainBg.png');
+    object-fit: cover;
+    background-size: 100% 500px;
+    background-repeat: no-repeat;
+    background-position: top center;
+
+    &__box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        color: $color-text-accent;
+    }
+
+    &__slogan {
+        max-width: 380px;
+        margin-bottom: 85px;
+
+        font-family: $secondary-font;
+        font-size: 48px;
+        line-height: 1.2;
+        font-weight: 300;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    
+    &__text {
+        font-size: 18px;
+        line-height: 1.4;
+        text-align: center;
+    }
+}
