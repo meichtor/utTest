@@ -4,4 +4,3 @@ document.addEventListener('click', clickOutside);
 toggleMenu();
 closeMenu();
 
-
