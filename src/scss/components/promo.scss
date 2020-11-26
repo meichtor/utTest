@@ -1,8 +1,4 @@
 .promo {
-    position: absolute;
-    top: 0;
-    z-index: 1;
-
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -12,9 +8,19 @@
 
     background-image: url('../images/mainBg.png');
     object-fit: cover;
-    background-size: 100% 500px;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: top center;
+
+    @include below($breakpoint-lg) {
+        min-height: 400px;
+        padding: 70px 0;
+    }
+
+    @include below($breakpoint-md) {
+        min-height: 300px;
+        padding: 50px 0;
+    }
 
     &__box {
         display: flex;
@@ -35,11 +41,35 @@
         font-weight: 300;
         text-align: center;
         text-transform: uppercase;
+
+        @include below($breakpoint-lg) {
+            font-size: 36px;
+
+            margin-bottom: 50px;
+        }
+
+        @include below($breakpoint-md) {
+            font-size: 28px;
+
+            margin-bottom: 30px;
+        }
+
+        @include below($breakpoint-sm) {
+            font-size: 24px;
+        }
     }
     
     &__text {
         font-size: 18px;
         line-height: 1.4;
         text-align: center;
+
+        @include below($breakpoint-md) {
+            font-size: 16px;
+        }
+
+        @include below($breakpoint-sm) {
+            font-size: 14px;
+        }
     }
 }

@@ -1,0 +1,65 @@
+.features {
+    padding: 40px 0;
+
+    &__box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__title {
+        margin-bottom: 30px;
+
+        @include below($breakpoint-md) {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__text {
+        margin-bottom: 50px;
+
+        @include below($breakpoint-md) {
+            margin-bottom: 30px;
+        }
+    }
+
+    &__list {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        margin: 0 -45px;
+
+        @include below($breakpoint-xl) {
+            margin: 0 auto;
+        }
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: calc(100% / 3 - 90px);
+        max-width: 270px;
+        margin: 0 45px 50px;
+
+        @include below($breakpoint-lg) {
+            width: calc(100% / 2 - 50px);
+            margin: 0 25px 50px;
+        }
+
+        @include below($breakpoint-sm) {
+            width: 100%;
+            margin: 0 auto 25px;
+        }
+    }
+
+    &__image {
+        max-width: 100px;
+        margin-bottom: 25px;
+    }
+
+    &__title {
+        margin-bottom: 11px;
+    }
+}

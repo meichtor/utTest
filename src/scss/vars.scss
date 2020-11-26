@@ -6,14 +6,28 @@ $secondary-font: 'Open Sans', Arial, sans-serif;
 // Colors
 
 $white: #FFFFFF;
+$black: #000000;
 
 $primary-color: #1657AB;
+$secondary-color: #85B657;
 
 $color-text-primary: #000000;
 $color-text-accent: #FFFFFF;
 
-$bg-primary: #E5E5E5;
+$bg-primary: #FFFFFF;
 $bg-footer: #19263F;
+$banner-bg: #FAFAFA;
 
 $link-hover: #FFFF00;
 $link-active: #FF0000;
+
+$error: #de0909;
+
+// Breakpoints
+
+$breakpoint-xs: 360px;
+$breakpoint-sm: 576.98px;
+$breakpoint-md: 767.98px;
+$breakpoint-lg: 1023.98px;
+$breakpoint-xl: 1366px;
+$breakpoint-xxl: 1920px;

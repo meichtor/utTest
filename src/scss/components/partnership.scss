@@ -1,0 +1,42 @@
+.partnership {
+    padding: 40px 0 100px;
+
+    @include below($breakpoint-md) {
+        padding: 30px 0 70px;
+    }
+
+    &__box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        color: $color-text-primary;
+    }
+
+    &__text {
+        margin-bottom: 20px;
+    }
+
+    &__title {
+        margin-bottom: 30px;
+
+        @include below($breakpoint-md) {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    &__item {
+        margin: 0 17px 20px;
+
+        @include below($breakpoint-md) {
+            margin: 0 10px 10px;
+        }
+    }
+}

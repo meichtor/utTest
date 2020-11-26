@@ -1,5 +1,8 @@
 .header {
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
     z-index: 2;
 
     width: 100%;
@@ -14,6 +17,76 @@
     &__logo {
         max-width: 250px;
         margin-right: 60px;
+        flex-shrink: 0;
+
+        @include below($breakpoint-sm) {
+            margin-right: 30px;
+            max-width: 200px;
+        }
+    }
+
+    &__menu {
+        width: 100%;
+
+        transition: right .25s ease;
+
+        @include below($breakpoint-lg) {
+            position: fixed;
+            top: 0;
+            right: -300px;
+
+            width: 300px;
+            height: 100vh;
+            padding: 20px;
+
+            background-color: $white;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.25);
+            overflow-y: auto;
+        }
+    }
+
+    &__menu.is-active {
+        @include below($breakpoint-lg) {
+            right: 0;
+        }
+    }
+
+    &__menu-row {
+        display: none;
+
+        @include below($breakpoint-lg) {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+    }
+
+    &__menu-text {
+        margin-bottom: 0;
+    }
+
+    &__close-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 40px;
+        height: 40px;
+    }
+
+    &__close-icon {
+        width: 100%;
+        height: 100%;
+        fill: $black;
+    }
+
+    &__close-btn:hover &__close-icon {
+        fill: $error;
+    }
+
+    &__close-btn:focus &__close-icon {
+        fill: $error;
     }
 
     &__nav {
@@ -23,6 +96,38 @@
         flex-grow: 1;
 
         color: $color-text-accent;
+
+        @include below($breakpoint-lg) {
+            flex-direction: column;
+            align-items: stretch;
+
+            color: $color-text-primary;
+        }
+    }
+
+    &__burger-btn {
+        display: none;
+        width: 50px;
+        height: 30px;
+
+        @include below($breakpoint-lg) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-shrink: 0;
+            margin-left: auto;
+        }
+    }
+
+    &__burger-icon {
+        width: 100%;
+        height: 100%;
+
+        fill: $white;
+    }
+
+    &__burger-btn:focus &__burger-icon {
+        fill: $secondary-color;
     }
 
     &__main-nav-list {
@@ -30,6 +135,12 @@
         align-items: center;
         justify-content: flex-start;
         margin-right: 20px;
+
+        @include below($breakpoint-lg) {
+            flex-direction: column;
+            align-items: stretch;
+            margin-right: 0;
+        }
     }
 
     &__main-nav-item {
@@ -45,6 +156,11 @@
         &:last-child {
             margin-right: 0;
         }
+
+        @include below($breakpoint-lg) {
+            margin: 0;
+            padding: 0;
+        }
     }
 
     &__main-nav-link {
@@ -54,6 +170,11 @@
         align-items: center;
 
         font-size: 16px;
+
+        @include below($breakpoint-lg) {
+            padding: 10px 0;
+            border-bottom: 1px dashed rgba($black, 0.25);
+        }
     }
 
     &__main-nav-icon {
@@ -65,6 +186,10 @@
         fill: $color-text-accent;
 
         transition: transform .3s ease;
+
+        @include below($breakpoint-lg) {
+            display: none;
+        }
     }
 
     &__main-nav-item:hover &__sub-nav-list {
@@ -98,6 +223,14 @@
             opacity: 1;
             visibility: visible;
         }
+
+        @include below($breakpoint-lg) {
+            position: static;
+
+            transform: initial;
+            visibility: visible;
+            opacity: 1;
+        }
     }
 
     &__sub-nav-link {
@@ -108,11 +241,22 @@
         font-size: 14px;
         text-align: center;
         color: $color-text-primary;
+
+        @include below($breakpoint-lg) {
+            padding: 10px;
+            text-align: left;
+        }
     }
 
     &__action-nav-list {
         display: flex;
         align-items: center;
+
+        @include below($breakpoint-lg) {
+            flex-direction: column;
+            margin-right: 0;
+            align-items: stretch;
+        }
     }
 
     &__action-nav-item {
@@ -125,5 +269,14 @@
         &:last-child {
             margin-right: 0;
         }
+
+        @include below($breakpoint-lg) {
+            margin: 0;
+        }
+    }
+
+    &__action-nav-link {
+        display: block;
+        padding: 10px 0;
     }
 }
